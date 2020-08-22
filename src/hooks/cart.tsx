@@ -32,7 +32,7 @@ const CartProvider: React.FC = ({ children }) => {
     async function loadProducts(): Promise<void> {
       const persisted = await AsyncStorage.getItem('@GoMarketplace:cart');
       if (persisted) {
-        setProducts(JSON.parse(persisted));
+        setProducts([...JSON.parse(persisted)]);
       }
     }
 
